@@ -15,12 +15,26 @@ void setup() {
       line(mouseX,mouseY,pmouseX,pmouseY);
     }
    
-   //draws a blue line
+   //draws a dark blue line
     if((keyPressed==true)&&(key=='a')) {
       stroke(4,26,142);
       strokeWeight(5);
       line(mouseX,mouseY,pmouseX,pmouseY);
     }
+   
+   //draws a purple line
+   if((keyPressed==true)&&(key=='l')) {
+     stroke(96,27,147);
+     strokeWeight(5);
+     line(mouseX,mouseY,pmouseX,pmouseY);
+   }
+   
+   //draws a light blue line
+   if((keyPressed==true)&&(key=='d')) {
+     stroke(63,181,196);
+     strokeWeight(5);
+     line(mouseX,mouseY,pmouseX,pmouseY);
+   }
    
    //draws a large black line that follows the mouse
    if((keyPressed==true)&&(key=='i')) {
