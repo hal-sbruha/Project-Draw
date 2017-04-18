@@ -1,6 +1,7 @@
 int r=0;
 int g=0;
 int b=0;
+int w=5;
 
 void setup() {
   size(1000,800);
@@ -43,7 +44,7 @@ void setup() {
    //draws a large black line that follows the mouse
    if((keyPressed==true)&&(key=='i')) {
      stroke(0);
-     strokeWeight(10);
+     strokeWeight(13);
      line(mouseX,mouseY,pmouseX,pmouseY);
    }
    
@@ -54,13 +55,16 @@ void setup() {
      line(mouseX,mouseY,pmouseX,pmouseY);
    }
    
+   //-----------------------------------------------------------------------------
+   
    //this creates an on screen button for the eraser instead of the 'f' key
    if(mouseX<20 && mouseY<20 && mousePressed) {
       r=10;
       g=121;
       b=105;
+      w=8;
       stroke(r,g,b);
-      strokeWeight(8);
+      strokeWeight(w);
       line(mouseX,mouseY,pmouseX,pmouseY);
    }
    
@@ -69,8 +73,9 @@ void setup() {
      r=0;
      g=0;
      b=0;
+     w=5;
      stroke(r,g,b);
-     strokeWeight(8);
+     strokeWeight(w);
      line(mouseX,mouseY,pmouseX,pmouseY);
    }
    
@@ -79,19 +84,42 @@ void setup() {
      r=4;
      g=26;
      b=142;
+     w=5;
      stroke(r,g,b);
-     strokeWeight(8);
+     strokeWeight(w);
      line(mouseX,mouseY,pmouseX,pmouseY);
    }
    
-   //this creates an on screen button for the purple line instead of the 'l' key
+   //this creates an on screen button for the purple line instead of the 'd' key
    if(mouseX<20 && mouseY<80 && mouseY>60 && mousePressed) {
      r=96;
      g=27;
      b=147;
+     w=5;
      stroke(r,g,b);
-     strokeWeight(8);
+     strokeWeight(w);
      line(mouseX,mouseY,pmouseX,pmouseY);
+   }
+   
+   //this creates an on screen button for the light blue line instead of the 'l' key
+    if(mouseX<20 && mouseY<100 && mouseY>80 && mousePressed) {
+     r=63;
+     g=181;
+     b=196;
+     w=5;
+     stroke(r,g,b);
+     strokeWeight(w);
+     line(mouseX,mouseY,pmouseX,pmouseY);
+   }
+   
+   if(mouseX<20 && mouseY<140 && mouseY>100 && mousePressed) {
+      r=10;
+      g=121;
+      b=105;
+      w=13;
+      stroke(r,g,b);
+      strokeWeight(w);
+      line(mouseX,mouseY,pmouseX,pmouseY);
    }
    
    //this draws the white square that signifies where the erase button is
@@ -114,6 +142,14 @@ void setup() {
    fill(96,27,147);
    rect(0,60,20,20);
    
+   //this draws the light blue square that signifies where the light blue line button is
+   noStroke();
+   fill(63,181,196);
+   rect(0,80,20,20);
+   
+   noStroke();
+   fill(255);
+   rect(0,100,20,40);
  }
 
  //draws a line when you click the mouse
