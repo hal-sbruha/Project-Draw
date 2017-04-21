@@ -2,6 +2,10 @@ int r=0;
 int g=0;
 int b=0;
 int w=5;
+color black=color(0);
+color darkBlue=color(4,26,142);
+color purple=color(96,27,147);
+color lightBlue=color(63,181,196);
 
 void setup() {
   size(1000,800);
@@ -112,6 +116,7 @@ void setup() {
      line(mouseX,mouseY,pmouseX,pmouseY);
    }
    
+   //this creates an on screen button for the large eraser instead of the 'j' key
    if(mouseX<20 && mouseY<140 && mouseY>100 && mousePressed) {
       r=10;
       g=121;
@@ -122,10 +127,28 @@ void setup() {
       line(mouseX,mouseY,pmouseX,pmouseY);
    }
    
-   //this draws the white square that signifies where the erase button is
+   //this creates an on screen button for the large black line instead of the 'i'
+   if(mouseX<20 && mouseY<180 && mouseY>140 && mousePressed) {
+      r=0;
+      g=0;
+      b=0;
+      w=13;
+      stroke(r,g,b);
+      strokeWeight(w);
+      line(mouseX,mouseY,pmouseX,pmouseY);
+   }
+   
+   if(mouseX>980 && mouseY<20 && mouseY>0 && mousePressed) {
+     background(10,121,105);
+   }
+   
+   //this draws the pink "eraser" that signifies where the erase button is
    noStroke();
-   fill(255);
-   rect(0,0,20,20);
+   fill(237,172,236);
+   rect(0,0,12,20);
+   noStroke();
+   fill(237,172,236);
+   triangle(12,0,12,20,20,20);
    
    //this draws the black square that signifies where the black line button is 
    noStroke();
@@ -147,14 +170,31 @@ void setup() {
    fill(63,181,196);
    rect(0,80,20,20);
    
+   //this draws the large pink "eraser" that signifies where the large eraser is
    noStroke();
-   fill(255);
-   rect(0,100,20,40);
+   fill(237,172,236);
+   rect(0,100,5,40);
+   noStroke();
+   fill(237,172,236);
+   triangle(5,100,5,140,20,140);
+   
+   //this draws the large black rectangle that signifies where the large black line button is
+   noStroke();
+   fill(0);
+   rect(0,140,20,40);
+   
+   //this draws the trash can that signifies where the full screen erase button is
+   noStroke();
+   fill(155,155,155);
+   rect(985,5,10,15);
+   noStroke();
+   fill(139,139,139);
+   rect(982,3,16,3);
  }
 
  //draws a line when you click the mouse
 void mouseDragged() {
   stroke(r,g,b);
-  strokeWeight(5);
+  strokeWeight(w);
   line(pmouseX,pmouseY,mouseX,mouseY);
 }
