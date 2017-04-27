@@ -12,7 +12,7 @@ void setup() {
   background(10,121,105);
 }
  void draw() {
-   //erases the whole screen 
+  /* //erases the whole screen 
    if((keyPressed==true)&&(key=='q')) {
       background(10,121,105);
     }
@@ -58,11 +58,12 @@ void setup() {
      strokeWeight(13);
      line(mouseX,mouseY,pmouseX,pmouseY);
    }
+   */
    
    //-----------------------------------------------------------------------------
    
    //this creates an on screen button for the eraser instead of the 'f' key
-   if(mouseX<20 && mouseY<20 && mousePressed) {
+   if(mouseX<20 && mouseY<155 && mouseY>132 && mousePressed) {
       r=10;
       g=121;
       b=105;
@@ -73,7 +74,7 @@ void setup() {
    }
    
    //this creates an on screen button for the small black line instead of void mouseDragged
-   if(mouseX<20 && mouseY<40 && mouseY>20 && mousePressed) {
+   if(mouseX<20 && mouseY<20 && mouseY>0 && mousePressed) {
      r=0;
      g=0;
      b=0;
@@ -84,7 +85,7 @@ void setup() {
    }
    
    //this creates an on screen button for the dark blue line instead of the 'd' key
-   if(mouseX<20 && mouseY<60 && mouseY>40 && mousePressed) {
+   if(mouseX<20 && mouseY<109 && mouseY>86 && mousePressed) {
      r=4;
      g=26;
      b=142;
@@ -95,7 +96,7 @@ void setup() {
    }
    
    //this creates an on screen button for the purple line instead of the 'd' key
-   if(mouseX<20 && mouseY<80 && mouseY>60 && mousePressed) {
+   if(mouseX<20 && mouseY<86 && mouseY>63 && mousePressed) {
      r=96;
      g=27;
      b=147;
@@ -106,7 +107,7 @@ void setup() {
    }
    
    //this creates an on screen button for the light blue line instead of the 'l' key
-    if(mouseX<20 && mouseY<100 && mouseY>80 && mousePressed) {
+    if(mouseX<20 && mouseY<132 && mouseY>109 && mousePressed) {
      r=63;
      g=181;
      b=196;
@@ -117,7 +118,7 @@ void setup() {
    }
    
    //this creates an on screen button for the large eraser instead of the 'j' key
-   if(mouseX<20 && mouseY<140 && mouseY>100 && mousePressed) {
+   if(mouseX<20 && mouseY<198 && mouseY>155 && mousePressed) {
       r=10;
       g=121;
       b=105;
@@ -128,7 +129,7 @@ void setup() {
    }
    
    //this creates an on screen button for the large black line instead of the 'i'
-   if(mouseX<20 && mouseY<180 && mouseY>140 && mousePressed) {
+   if(mouseX<20 && mouseY<63 && mouseY>20 && mousePressed) {
       r=0;
       g=0;
       b=0;
@@ -138,51 +139,77 @@ void setup() {
       line(mouseX,mouseY,pmouseX,pmouseY);
    }
    
+   //this creates an on screen button for the full screen eraser
    if(mouseX>980 && mouseY<20 && mouseY>0 && mousePressed) {
      background(10,121,105);
    }
+  
+  //this draws the lines around the buttons
+   noStroke();
+   fill(165);
+   rect(20,0,3,201);
+   noStroke();
+   fill(165);
+   rect(0,20,23,3);
+   noStroke();
+   fill(165);
+   rect(0,63,20,3);
+   noStroke();
+   fill(165);
+   rect(0,86,20,3);
+   noStroke();
+   fill(165);
+   rect(0,109,20,3);
+   noStroke();
+   fill(165);
+   rect(0,132,20,3);
+   noStroke();
+   fill(165);
+   rect(0,155,20,3);
+   noStroke();
+   fill(165);
+   rect(0,198,20,3);
    
-   //this draws the pink "eraser" that signifies where the erase button is
+   
    noStroke();
-   fill(237,172,236);
-   rect(0,0,12,20);
+   fill(165);
+   rect(0,797,23,3);
    noStroke();
-   fill(237,172,236);
-   triangle(12,0,12,20,20,20);
+   fill(165);
+   rect(0,777,3,20);
+   noStroke();
+   fill(165);
+   rect(20,777,3,20);
+   noStroke();
+   fill(165);
+   rect(0,777,20,3);
    
    //this draws the black square that signifies where the black line button is 
    noStroke();
    fill(0);
-   rect(0,20,20,20);
-   
-   //this draws the dark blue square that signifies where the dark blue line button is
-   noStroke();
-   fill(4,26,142);
-   rect(0,40,20,20);
-   
-   //this draws the purple square that signifies where the purple line button is
-   noStroke();
-   fill(96,27,147);
-   rect(0,60,20,20);
-   
-   //this draws the light blue square that signifies where the light blue line button is
-   noStroke();
-   fill(63,181,196);
-   rect(0,80,20,20);
-   
-   //this draws the large pink "eraser" that signifies where the large eraser is
-   noStroke();
-   fill(237,172,236);
-   rect(0,100,5,40);
-   noStroke();
-   fill(237,172,236);
-   triangle(5,100,5,140,20,140);
+   rect(0,0,20,20);
    
    //this draws the large black rectangle that signifies where the large black line button is
    noStroke();
    fill(0);
-   rect(0,140,20,40);
+   rect(0,23,20,40);
    
+   //this draws the purple square that signifies where the purple line button is
+   noStroke();
+   fill(96,27,147);
+   rect(0,66,20,20);
+   
+   //this draws the dark blue square that signifies where the dark blue line button is
+   noStroke();
+   fill(4,26,142);
+   rect(0,89,20,20);
+   
+   //this draws the light blue square that signifies where the light blue line button is
+   noStroke();
+   fill(63,181,196);
+   rect(0,112,20,20);
+   
+  
    //this draws the trash can that signifies where the full screen erase button is
    noStroke();
    fill(155,155,155);
